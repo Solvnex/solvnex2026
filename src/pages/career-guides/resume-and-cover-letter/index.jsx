@@ -1,0 +1,110 @@
+import MainLayout from '@/components/layout/MainLayout';
+import {
+  Box,
+  Breadcrumbs,
+  IconButton,
+  Link,
+  Stack,
+  Typography,
+} from '@mui/material';
+import React from 'react';
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import NextIcon from '@mui/icons-material/NavigateNext';
+import { useRouter } from 'next/router';
+import ArticleDivisions from '@/components/career-guides/ArticleDivisions';
+
+const ResumeAndCoverLetter = () => {
+  const router = useRouter();
+  const targetType = 'Resume & Cover Letter';
+
+  const handleGoBack = () => {
+    router.back();
+  };
+
+  const breadcrumbs = [
+    <Link
+      key="1"
+      href="/career-guides"
+      sx={{
+        fontWeight: 500,
+        fontSize: '16px',
+        color: '#504C4C',
+        textDecoration: 'none',
+      }}
+    >
+      Career Guides
+    </Link>,
+    <Typography key="2" sx={{ fontSize: '16px', color: '#504C4C' }}>
+      Resume & Cover Letter
+    </Typography>,
+  ];
+
+  return (
+    <MainLayout>
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          padding: '30px 128px 103px 72px',
+        }}
+      >
+        <IconButton
+          onClick={handleGoBack}
+          sx={{
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'flex-start',
+            alignItems: 'start',
+            width: 'max-content',
+            height: 'max-content',
+            marginBottom: '16px',
+          }}
+        >
+          <ArrowBackIcon
+            sx={{ width: '20px', height: '20px', color: '#01b1a8' }}
+          />
+        </IconButton>
+        <Stack
+          sx={{
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'start',
+            marginLeft: '55px',
+          }}
+        >
+          <Typography
+            sx={{
+              fontWeight: 700,
+              fontSize: '80px',
+              color: '#212020',
+              marginBottom: '20px',
+            }}
+          >
+            Resume & Cover Letter
+          </Typography>
+          <Typography
+            sx={{
+              fontSize: '20px',
+              color: '#212020',
+              marginBottom: '40px',
+              width: '90%',
+            }}
+          >
+            This exploration helps you gain insights into average salary ranges,
+            factors that influence pay, and opportunities for negotiation or
+            career advancement.
+          </Typography>
+          <Breadcrumbs
+            sx={{ marginLeft: '23px', marginBottom: '40px' }}
+            separator={<NextIcon />}
+          >
+            {breadcrumbs}
+          </Breadcrumbs>
+          <ArticleDivisions targetType={targetType} />
+        </Stack>
+      </Box>
+    </MainLayout>
+  );
+};
+
+export default ResumeAndCoverLetter;
