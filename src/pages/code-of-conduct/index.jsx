@@ -105,7 +105,7 @@ const CodeofConduct = () => {
           A) Act ethically and with integrity.
         </Typography>
         <Typography sx={ListStyle}>
-          B) Comply will all of SOLVNEX's policies.
+          B) Comply will all of SOLVNEX&#39;s policies.
         </Typography>
         <Typography sx={ListStyle}>
           C) Respect the rights of all Users.

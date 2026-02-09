@@ -1,4 +1,5 @@
 import { Badge, Box, Stack, Typography } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 
 import CircleIcon from "@mui/icons-material/Circle";
@@ -75,13 +76,14 @@ const Article1 = () => {
           marginBottom:'40px'
         }}
       >
-        <img
-          src="/images/article1img.png"
-          alt="image"
-          width="667px"
-          height="638px"
-          style={{ borderRadius: "10px" }}
-        />
+        <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
+          <Image
+            src="/images/article1img.png"
+            alt="image"
+            width={667}
+            height={638}
+          />
+        </Box>
         <Stack
           sx={{
             flexDirection: "column",
@@ -141,11 +143,14 @@ const Article1 = () => {
           <br />
           <Typography sx={TextStyle}>“When this startup was in its ideation stage under the Social Enterprise Education Lab (SEEd.Lab) programme by PETRONAS and Tata Consultancy Services (TCS), our vision was to connect graduate talents or young professionals who are unemployed to gigs from corporations and SMEs. COVID-19 hit when we were still refining our ideas, and when the youth unemployment numbers in Malaysia grew as a result, we were certain that our startup could do some good in this uncertain climate,” Qadir adds.</Typography>
           <br />
-          <img src="/images/article1.2img.png"
-          alt="image"
-          width="100%"
-          height="391px"
-          style={{ borderRadius: "10px" }} />
+          <Box sx={{ position: "relative", width: "100%", height: "391px", borderRadius: "10px", overflow: "hidden" }}>
+            <Image
+              src="/images/article1.2img.png"
+              alt="image"
+              fill
+              sizes="(max-width: 768px) 100vw, 1200px"
+            />
+          </Box>
           <br />
           <Typography sx={TextStyle}>
           According to the World Bank, about 25.1 per cent of the workforce in Malaysia are self-employed in 2020. This number is expected to rise as companies scale down due to the economic impact of the pandemic. Even then, awareness and acceptance of the gig economy are still at an early stage. 

@@ -23,7 +23,17 @@ const SignupForm = ({ role }) => {
   const [deps, setDeps] = useState([]);
 
   useEffect(()=>{
-    getDeps();
+    const fetchDeps = async () => {
+      try {
+        const resp = await Api.departments();
+        setDeps(resp);
+        setInput(prev => ({ ...prev, departmentId: resp[0]?.id }));
+      } catch (ex) {
+        console.log(ex);
+        setDeps([]);
+      }
+    };
+    fetchDeps();
   },[])
 
   const onChangeInput = (ev) => {
@@ -34,16 +44,7 @@ const SignupForm = ({ role }) => {
     setInput({ ...input });
   }
 
-  const getDeps = async () => {
-    try {
-      const resp = await Api.departments()
-      setDeps(resp);
-      setInput({...input, departmentId:resp[0].id})
-    } catch (ex) {
-      console.log(ex)
-      setDeps([]);
-    }
-  }
+  
 
   const onSubmit = async () => {
     try {

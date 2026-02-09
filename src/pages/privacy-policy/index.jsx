@@ -302,7 +302,7 @@ const PrivacyPolicy = () => {
         </Typography>
 
         <Typography sx={ListTitleStyle}>
-          11. Data Subject's Obligations
+          11. Data Subject&#39;s Obligations
         </Typography>
         <Typography sx={ContentStyle}>
           It is necessary for SOLVNEX DIGITAL SDN BHD to collect and retain User

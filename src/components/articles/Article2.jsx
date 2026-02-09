@@ -1,4 +1,5 @@
 import { Badge, Box, Stack, Typography } from "@mui/material";
+import Image from "next/image";
 import React from "react";
 
 import CircleIcon from "@mui/icons-material/Circle";
@@ -77,13 +78,14 @@ const Article2 = () => {
           marginBottom: "40px",
         }}
       >
-        <img
-          src="/images/article2img.png"
-          alt="image"
-          width="667px"
-          height="638px"
-          style={{ borderRadius: "10px" }}
-        />
+        <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
+          <Image
+            src="/images/article2img.png"
+            alt="image"
+            width={667}
+            height={638}
+          />
+        </Box>
         <Stack
           sx={{
             flexDirection: "column",

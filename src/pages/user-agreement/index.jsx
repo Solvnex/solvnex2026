@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import MainLayout from "@/components/layout/MainLayout";
 import {
   Box,
@@ -114,11 +115,11 @@ const UserAgreement = () => {
           href="/user-agreement/business"
             sx={ButtonStyle}
           >
-            <img
+            <Image
               src="/icon/building.png"
               alt="icon"
-              width="106px"
-              height="106px"
+              width={106}
+              height={106}
             />
             <Typography
               sx={ButtonTitleStyle}
@@ -137,11 +138,11 @@ const UserAgreement = () => {
           href="/user-agreement/gig-professional"
             sx={ButtonStyle}
           >
-            <img
+            <Image
               src="/icon/person.png"
               alt="icon"
-              width="106px"
-              height="106px"
+              width={106}
+              height={106}
             />
             <Typography
               sx={{
