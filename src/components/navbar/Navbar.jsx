@@ -224,6 +224,7 @@ const Navbar = () => {
         justifyContent: "space-between",
         alignItems: "center",
         boxShadow: "none",
+        zIndex: 1300,
       }}
     >
       <Link
@@ -332,10 +333,20 @@ const Navbar = () => {
           Sign Up
         </Button> */}
       </Stack>
-      <IconButton onClick={handleDrawerOpen} sx={{ display: { md: "none" } }}>
+      <IconButton
+        aria-label="Open navigation menu"
+        onClick={handleDrawerOpen}
+        sx={{ display: { md: "none" }, zIndex: 1400, pointerEvents: "auto" }}
+      >
         <MenuIcon />
       </IconButton>
-      <Drawer anchor="right" open={open} onClose={handleDrawerClose}>
+      <Drawer
+        anchor="right"
+        open={open}
+        onClose={handleDrawerClose}
+        ModalProps={{ keepMounted: true }}
+        sx={{ zIndex: 1500 }}
+      >
         {drawerContent}
       </Drawer>
     </AppBar>
