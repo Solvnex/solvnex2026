@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import { Box, Stack, Typography, Button } from '@mui/material';
+import Image from 'next/image';
 import CheckIcon from '@mui/icons-material/DoneOutlined';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForwardOutlined';
 
@@ -24,12 +24,13 @@ const HomeSection1 = () => {
     <Box
       sx={{
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: { xs: 'column', md: 'row' },
         justifyContent: 'space-between',
         alignItems: 'center',
         background: '#fcfcfc',
         padding: { xs: '10px 30px', md: '0 30px 22px 101px' },
         width: '100%',
+        gap: { xs: '20px', md: '0' },
       }}
     >
       <Stack
@@ -110,8 +111,17 @@ const HomeSection1 = () => {
           </Typography>
         </Stack>
       </Stack>
-      <Stack sx={{ display: { xs: 'none', md: 'flex' }, width: '52%' }}>
-        <img src="/images/imageSection1.png" alt="..." />
+      <Stack sx={{ display: { xs: 'flex', md: 'flex' }, width: { xs: '100%', md: '52%' }, justifyContent: 'center', alignItems: 'center' }}>
+        <Box sx={{ position: 'relative', width: { xs: '100%', md: '100%' }, maxWidth: { md: '667px' }, borderRadius: '10px', overflow: 'hidden' }}>
+          <Image
+            src="/images/imageSection1.png"
+            alt="hero"
+            width={667}
+            height={638}
+            style={{ width: '100%', height: 'auto' }}
+            priority
+          />
+        </Box>
       </Stack>
     </Box>
   );

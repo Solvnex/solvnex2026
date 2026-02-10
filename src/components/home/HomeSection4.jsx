@@ -46,7 +46,7 @@ const HomeSection4 = () => {
           gap: { xs: '30px', md: '82px' },
         }}
       >
-        <Stack sx={{ flexDirection: 'column', width: '30%' }}>
+        <Stack sx={{ flexDirection: 'column', width: { xs: '100%', md: '30%' } }}>
           <img
             src="/icon/network.png"
             alt="..."
@@ -66,7 +66,7 @@ const HomeSection4 = () => {
             </CustomLi>
           </CustomUl>
         </Stack>
-        <Stack sx={{ flexDirection: 'column', width: '30%' }}>
+        <Stack sx={{ flexDirection: 'column', width: { xs: '100%', md: '30%' } }}>
           <img
             src="/icon/arrowinsquare.png"
             alt="..."
@@ -86,7 +86,7 @@ const HomeSection4 = () => {
             </CustomLi>
           </CustomUl>
         </Stack>
-        <Stack sx={{ flexDirection: 'column', width: '30%' }}>
+        <Stack sx={{ flexDirection: 'column', width: { xs: '100%', md: '30%' } }}>
           <img
             src="/icon/chainIcon.png"
             alt="..."
