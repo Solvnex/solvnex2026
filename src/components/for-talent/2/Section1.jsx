@@ -1,15 +1,17 @@
-/* eslint-disable @next/next/no-img-element */
 import { Button, Stack, Typography } from '@mui/material';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForwardOutlined';
+import Image from 'next/image';
+import { responsive } from '@/components/shared/responsive';
 
 const Section1 = () => {
   return (
     <Stack
       sx={{
-        flexDirection: 'row',
+        flexDirection: responsive.rowToCol,
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '56px 139px 100px 101px',
+        gap: { xs: '24px', md: '0' },
+        padding: { xs: '30px', md: '56px 139px 100px 101px' },
       }}
     >
       <Stack
@@ -17,7 +19,7 @@ const Section1 = () => {
           flexDirection: 'column',
           justifyContent: 'flex-start',
           alignItems: 'start',
-          width: '55%',
+          width: { xs: '100%', md: '55%' },
         }}
       >
         <Typography
@@ -33,7 +35,7 @@ const Section1 = () => {
         <Typography
           sx={{
             fontWeight: 700,
-            fontSize: '50px',
+            fontSize: { xs: '32px', md: '50px' },
             color: '#0B9089',
             marginBottom: '28px',
           }}
@@ -46,6 +48,7 @@ const Section1 = () => {
             fontSize: '18px',
             color: '#212020',
             marginBottom: '45px',
+            width: { xs: '100%', md: '70%' },
           }}
         >
           Explore exciting projects and be part of a community that values your
@@ -74,12 +77,13 @@ const Section1 = () => {
           <ArrowForwardIcon />
         </Button> */}
       </Stack>
-      <Stack sx={{ width: '45%' }}>
-        <img
+      <Stack sx={{ width: { xs: '100%', md: '45%' } }}>
+        <Image
           src="/images/talent2Image.png"
-          alt="..."
-          width="100%"
-          height="460px"
+          alt="talent-2"
+          width={800}
+          height={460}
+          style={{ width: '100%', height: 'auto' }}
         />
       </Stack>
     </Stack>

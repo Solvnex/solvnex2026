@@ -1,4 +1,5 @@
 import { Stack, Typography } from '@mui/material';
+import { responsive } from '@/components/shared/responsive';
 
 const ProcessDivStyle = {
   flexDirection: 'column',
@@ -40,7 +41,7 @@ const Section3 = () => {
       sx={{
         justifyContent: 'center',
         alignItems: 'start',
-        padding: '0 69px 0 76px',
+        padding: { xs: '0 30px', md: '0 69px 0 76px' },
       }}
     >
       <Stack
@@ -48,7 +49,7 @@ const Section3 = () => {
           flexDirection: 'column',
           justifyContent: 'flex-start',
           alignItems: 'start',
-          padding: '91px 118px 90px 84px',
+          padding: { xs: '30px', md: '91px 118px 90px 84px' },
           marginLeft: '3.5px',
           background: '#3B3838 0% 0% no-repeat padding-box',
           borderRadius: '10px',
@@ -68,7 +69,7 @@ const Section3 = () => {
         <Typography
           sx={{
             fontWeight: 700,
-            fontSize: '38px',
+            fontSize: { xs: '28px', md: '38px' },
             color: '#01B1A8',
             marginBottom: '28px',
           }}
@@ -90,12 +91,13 @@ const Section3 = () => {
         </Typography>
         <Stack
           sx={{
-            flexDirection: 'row',
+            flexDirection: responsive.rowToCol,
             justifyContent: 'space-between',
             alignItems: 'start',
+            gap: { xs: '20px', md: '0' },
           }}
         >
-          <Stack sx={ProcessDivStyle}>
+          <Stack sx={{ ...ProcessDivStyle, width: { xs: '100%', md: '30%' } }}>
             <Typography sx={ProcessStepStyle}>1</Typography>
             <Typography sx={ProcessTitleStyle}>Sign Up for Free</Typography>
             <Typography sx={ProcessDescStyle}>
@@ -103,7 +105,7 @@ const Section3 = () => {
               preferences, and showcasing your portfolio and sample works.
             </Typography>
           </Stack>
-          <Stack sx={ProcessDivStyle}>
+          <Stack sx={{ ...ProcessDivStyle, width: { xs: '100%', md: '30%' } }}>
             <Typography sx={ProcessStepStyle}>2</Typography>
             <Typography sx={ProcessTitleStyle}>Call from Us</Typography>
             <Typography sx={ProcessDescStyle}>
@@ -111,7 +113,7 @@ const Section3 = () => {
               better understand your skills and aspirations.
             </Typography>
           </Stack>
-          <Stack sx={ProcessDivStyle}>
+          <Stack sx={{ ...ProcessDivStyle, width: { xs: '100%', md: '30%' } }}>
             <Typography sx={ProcessStepStyle}>3</Typography>
             <Typography sx={ProcessTitleStyle}>Job Matching</Typography>
             <Typography sx={ProcessDescStyle}>
