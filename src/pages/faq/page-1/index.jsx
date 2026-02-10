@@ -1,7 +1,8 @@
 import { Box, Button, Stack, Typography } from '@mui/material';
-import QuestionType from '../../../components/faq/QuestionType';
+import QuestionType from '@/components/faq/QuestionType';
 import MainLayout from '@/components/layout/MainLayout';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForwardOutlined';
+import { responsive } from '@/components/shared/responsive';
 
 const FAQ = () => {
   return (
@@ -12,14 +13,16 @@ const FAQ = () => {
           flexDirection: 'column',
           justifyContent: 'flex-start',
           alignItems: 'start',
-          padding: '60px 101px 100px',
+          px: responsive.padXPage,
+          pt: { xs: '30px', md: '60px' },
+          pb: { xs: '60px', md: '100px' },
           background: '#fcfcfc',
         }}
       >
         <Typography
           sx={{
             fontWeight: 700,
-            fontSize: '38px',
+            fontSize: responsive.titleLg,
             color: '#1F1D1D',
             marginBottom: '40px',
           }}
@@ -27,16 +30,18 @@ const FAQ = () => {
           Frequent Asked Questions
         </Typography>
         <QuestionType />
-        <Stack
+        {/* <Stack
           sx={{
-            flexDirection: 'row',
+            flexDirection: responsive.rowToCol,
             justifyContent: 'space-between',
-            alignItems: 'start',
+            alignItems: { xs: 'start', md: 'start' },
             marginTop: '60px',
-            padding: '46px 46px 44px 50px',
+            px: { xs: '24px', md: '50px' },
+            py: { xs: '24px', md: '44px' },
             background: '#212020 0% 0% no-repeat padding-box',
             width: '100%',
             borderRadius: '10px',
+            gap: { xs: '24px', md: 0 },
           }}
         >
           <Stack
@@ -44,18 +49,18 @@ const FAQ = () => {
               flexDirection: 'column',
               justifyContent: 'flex-start',
               alignItems: 'start',
-              width: '38%',
+              width: { xs: '100%', md: '38%' },
             }}
           >
             <Typography
-              sx={{ fontSize: '18px', color: '#fff', marginBottom: '15px' }}
+              sx={{ fontSize: responsive.textMd, color: '#fff', marginBottom: '15px' }}
             >
               If you cannot find the answer, We are here to help.
             </Typography>
             <Typography
               sx={{
                 fontWeight: 700,
-                fontSize: '35px',
+                fontSize: responsive.titleMd,
                 color: '#fff',
                 marginBottom: '10px',
               }}
@@ -63,7 +68,7 @@ const FAQ = () => {
               You still have a question?
             </Typography>
             <Typography
-              sx={{ fontWeight: 700, fontSize: '35px', color: '#fff' }}
+              sx={{ fontWeight: 700, fontSize: responsive.titleMd, color: '#fff' }}
             >
               Send us here.
             </Typography>
@@ -85,12 +90,13 @@ const FAQ = () => {
                 background: '#01b1a8',
                 color: '#fff',
               },
+              alignSelf: { xs: 'start', md: 'center' },
             }}
           >
             Send A Question
             <ArrowForwardIcon />
           </Button>
-        </Stack>
+        </Stack> */}
       </Box>
     </MainLayout>
   );
