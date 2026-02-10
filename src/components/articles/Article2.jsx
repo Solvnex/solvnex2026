@@ -1,12 +1,13 @@
 import { Badge, Box, Stack, Typography } from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import { responsive } from "@/components/shared/responsive";
 
 import CircleIcon from "@mui/icons-material/Circle";
 
 const TitleStyle = {
   fontWeight: 700,
-  fontSize: "25px",
+  fontSize: responsive.titleMd,
   color: "#212020",
   marginBottom: "15px",
   textAlign: "left",
@@ -14,10 +15,10 @@ const TitleStyle = {
 
 const DateStyle = {
   fontWeight: 500,
-  fontSize: "14px",
+  fontSize: responsive.dateSm,
   color: "#504C4C",
-  textWrap: "nowrap",
-  marginBottom: "40px",
+  whiteSpace: "nowrap",
+  marginBottom: responsive.sectionMb,
 };
 
 const CircleIconStyle = {
@@ -28,19 +29,19 @@ const CircleIconStyle = {
 };
 
 const TextStyle = {
-  fontSize: "18px",
+  fontSize: responsive.textMd,
   color: "#504C4C",
 };
 
 const QuoteStyle = {
   fontWeight: 500,
-  fontSize: "25px",
+  fontSize: responsive.quoteMd,
   color: "#504C4C",
 };
 
 const SubtitleStyle = {
   fontWeight: 600,
-  fontSize: "20px",
+  fontSize: responsive.subtitleMd,
   color: "#01B1A8",
 };
 
@@ -52,7 +53,7 @@ const Article2 = () => {
           borderRadius: "5px",
           minWidth: "max-content",
           padding: "5px 10px",
-          fontSize: "14px",
+          fontSize: responsive.dateSm,
           fontWeight: 400,
           color: "#887305",
           background: "#F8EECC 0% 0% no-repeat padding-box",
@@ -71,19 +72,20 @@ const Article2 = () => {
       </Typography>
       <Stack
         sx={{
-          flexDirection: "row",
+          flexDirection: responsive.rowToCol,
           justifyContent: "space-between",
-          alignItems: "start",
-          gap: "30px",
-          marginBottom: "40px",
+          alignItems: { xs: "start", md: "start" },
+          gap: responsive.gapArticle,
+          marginBottom: responsive.sectionMb,
         }}
       >
-        <Box sx={{ borderRadius: "10px", overflow: "hidden" }}>
+        <Box sx={{ borderRadius: "10px", overflow: "hidden", width: { xs: "100%", md: "auto" } }}>
           <Image
             src="/images/article2img.png"
             alt="image"
             width={667}
             height={638}
+            style={{ width: "100%", height: "auto" }}
           />
         </Box>
         <Stack
