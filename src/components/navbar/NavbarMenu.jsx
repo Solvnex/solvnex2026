@@ -14,6 +14,8 @@ const CustomMenu = styled((props) => (
       vertical: 'top',
       horizontal: 'left',
     }}
+    disableScrollLock
+    keepMounted
     {...props}
   />
 ))({
