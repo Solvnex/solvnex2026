@@ -1,15 +1,16 @@
-/* eslint-disable @next/next/no-img-element */
-import { Button, Stack, Typography } from '@mui/material';
+import { Button, Stack, Typography, Box } from '@mui/material';
+import Image from 'next/image';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 const Section1 = () => {
   return (
     <Stack
       sx={{
-        flexDirection: 'row',
+        flexDirection: { xs: 'column', md: 'row' },
         justifyContent: 'space-between',
         alignItems: 'center',
-        padding: '20px 74px 53px 101px',
+        gap: { xs: '20px', md: '0' },
+        padding: { xs: '20px 30px', md: '20px 74px 53px 101px' },
       }}
     >
       <Stack
@@ -17,7 +18,7 @@ const Section1 = () => {
           flexDirection: 'column',
           alignItems: 'start',
           justifyContent: 'center',
-          width: '48%',
+          width: { xs: '100%', md: '48%' },
         }}
       >
         <Typography
@@ -73,8 +74,10 @@ const Section1 = () => {
           <ArrowForwardIcon />
         </Button> */}
       </Stack>
-      <Stack sx={{ width: '50%', height: '510px' }}>
-        <img src="/images/tableimage.png" alt="..." />
+      <Stack sx={{ width: { xs: '100%', md: '50%' }, height: 'auto', justifyContent: 'center', alignItems: 'center' }}>
+        <Box sx={{ position: 'relative', width: '100%', maxWidth: { md: '690px' }, borderRadius: '10px', overflow: 'hidden' }}>
+          <Image src="/images/tableimage.png" alt="table" width={690} height={510} style={{ width: '100%', height: 'auto' }} />
+        </Box>
       </Stack>
     </Stack>
   );

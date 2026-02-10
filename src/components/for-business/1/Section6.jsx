@@ -5,12 +5,12 @@ const Section6 = () => {
   return (
     <Stack
       sx={{
-        flexDirection: 'row',
+        flexDirection: { xs: 'column', md: 'row' },
         justifyContent: 'flex-start',
         alignItems: 'start',
         gap: '15px',
-        margin: '0 101px 80px',
-        padding: '46px 46px 31px 50px',
+        margin: { xs: '0 30px 40px', md: '0 101px 80px' },
+        padding: { xs: '24px', md: '46px 46px 31px 50px' },
         background: '#01B1A8 0% 0% no-repeat padding-box',
         borderRadius: '10px',
       }}
