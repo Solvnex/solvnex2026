@@ -1,11 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
 import { Stack, Typography, styled } from '@mui/material';
+import Image from 'next/image';
+import { responsive } from '@/components/shared/responsive';
 
 const TitleStyle = {
   fontWeight: 600,
   fontSize: '28px',
   color: '#1F1D1D',
-  height: '107px',
+  height: { xs: 'auto', md: '107px' },
 };
 
 const CustomUl = styled('ul')({
@@ -27,14 +28,14 @@ const Section2 = () => {
     <Stack
       sx={{
         flexDirection: 'column',
-        padding: '0 128px 100px 129px',
+        padding: { xs: '0 30px 60px', md: '0 128px 100px 129px' },
         alignItems: 'center',
       }}
     >
       <Typography
         sx={{
           fontWeight: 700,
-          fontSize: '38px',
+          fontSize: { xs: '28px', md: '38px' },
           color: '#1F1D1D',
           marginBottom: '40px',
           textAlign: 'center',
@@ -45,18 +46,18 @@ const Section2 = () => {
       </Typography>
       <Stack
         sx={{
-          flexDirection: { xs: 'column', md: 'row' },
+          flexDirection: responsive.rowToCol,
           justifyContent: 'flex-start',
           alignItems: 'start',
           gap: { xs: '30px', md: '82px' },
         }}
       >
-        <Stack sx={{ flexDirection: 'column', width: '30%' }}>
-          <img
+        <Stack sx={{ flexDirection: 'column', width: { xs: '100%', md: '30%' } }}>
+          <Image
             src="/icon/targetIcon.png"
-            alt="..."
-            width="46px"
-            height="46px"
+            alt="target"
+            width={46}
+            height={46}
             style={{ marginBottom: '16px' }}
           />
           <Typography sx={TitleStyle}>
@@ -73,12 +74,12 @@ const Section2 = () => {
             </CustomLi>
           </CustomUl>
         </Stack>
-        <Stack sx={{ flexDirection: 'column', width: '30%' }}>
-          <img
+        <Stack sx={{ flexDirection: 'column', width: { xs: '100%', md: '30%' } }}>
+          <Image
             src="/icon/cubeIcon.png"
-            alt="..."
-            width="46px"
-            height="46px"
+            alt="cube"
+            width={46}
+            height={46}
             style={{ marginBottom: '16px' }}
           />
           <Typography sx={TitleStyle}>Fun Digital Product Making</Typography>
@@ -94,12 +95,12 @@ const Section2 = () => {
             </CustomLi>
           </CustomUl>
         </Stack>
-        <Stack sx={{ flexDirection: 'column', width: '30%' }}>
-          <img
+        <Stack sx={{ flexDirection: 'column', width: { xs: '100%', md: '30%' } }}>
+          <Image
             src="/icon/buildingIcon.png"
-            alt="..."
-            width="46px"
-            height="46px"
+            alt="building"
+            width={46}
+            height={46}
             style={{ marginBottom: '16px' }}
           />
           <Typography sx={TitleStyle}>

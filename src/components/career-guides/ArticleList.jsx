@@ -8,7 +8,9 @@ import {
   Pagination,
   PaginationItem,
   Breadcrumbs,
+  Box,
 } from '@mui/material';
+import Image from 'next/image';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBackOutlined';
 import ArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
@@ -225,19 +227,25 @@ const ArticleList = ({ targetType }) => {
                   alignItems: 'start',
                   cursor: 'pointer',
                   textDecoration: 'none',
-                  maxWidth: '373px',
+                  maxWidth: { xs: '100%', md: '373px' },
                 }}
               >
-                <img
-                  src={article.Image}
-                  alt={article.Title}
-                  height="400px"
-                  style={{ borderRadius: '10px', marginBottom: '30px' }}
-                />
+                <Box
+                  sx={{
+                    position: 'relative',
+                    width: '100%',
+                    height: { xs: '220px', md: '320px' },
+                    borderRadius: '10px',
+                    overflow: 'hidden',
+                    marginBottom: '20px',
+                  }}
+                >
+                  <Image src={article.Image} alt={article.Title} fill style={{ objectFit: 'cover' }} />
+                </Box>
                 <Typography
                   sx={{
                     fontWeight: 600,
-                    fontSize: '20px',
+                    fontSize: { xs: '18px', md: '20px' },
                     color: '#212020',
                     marginBottom: '12px',
                     width: { md: '95%' },
@@ -251,7 +259,7 @@ const ArticleList = ({ targetType }) => {
                 <Typography
                   sx={{
                     fontWeight: 500,
-                    fontSize: '16px',
+                    fontSize: { xs: '14px', md: '16px' },
                     color: '#212020',
                   }}
                 >

@@ -12,6 +12,7 @@ import NextIcon from '@mui/icons-material/NavigateNext';
 import { CustomTextfield } from '@/components/custom-textfield';
 import SquareCheckbox from '@/components/custom-checkbox/SquareCheckbox';
 import LeaveAQuestion from '@/components/faq/LeaveAQuestion';
+import { responsive } from '@/components/shared/responsive';
 
 const breadcrumbs = [
   <Link
@@ -52,10 +53,12 @@ const SendQuestion = () => {
           flexDirection: 'column',
           justifyContent: 'flex-start',
           alignItems: 'start',
-          padding: '14px 101px 100px',
+          px: responsive.padXPage,
+          pt: { xs: '30px', md: '30px' },
+          pb: { xs: '60px', md: '100px' },
         }}
       >
-        <Breadcrumbs sx={{ marginBottom: '30px' }} separator={<NextIcon />}>
+        <Breadcrumbs sx={{ marginBottom: { xs: '20px', md: '30px' } }} separator={<NextIcon />}>
           {breadcrumbs}
         </Breadcrumbs>
         <LeaveAQuestion />

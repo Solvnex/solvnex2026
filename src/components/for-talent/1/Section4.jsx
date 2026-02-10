@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import {
   Stack,
   Tooltip,
@@ -6,6 +5,8 @@ import {
   styled,
   tooltipClasses,
 } from '@mui/material';
+import Image from 'next/image';
+import { responsive } from '@/components/shared/responsive';
 
 import CheckIcon from '@mui/icons-material/CheckOutlined';
 
@@ -51,7 +52,8 @@ const IconDivStyle = {
 
 const ListConnector = {
   border: '2px dashed #C6C1B3',
-  width: '450px',
+  width: { xs: '0px', md: '450px' },
+  display: { xs: 'none', md: 'block' },
   marginTop: '60px',
 };
 
@@ -61,7 +63,7 @@ const Section4 = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        padding: '23px 90px 476px 104px',
+        padding: { xs: '30px', md: '23px 90px 476px 104px' },
         background: '#000',
         justifyContent: 'flex-start',
         alignItems: 'center',
@@ -83,10 +85,11 @@ const Section4 = () => {
       <Stack
         sx={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: responsive.rowToCol,
           justifyContent: 'flex-start',
           alignItems: 'center',
           width: '100%',
+          gap: { xs: '20px', md: '0' },
         }}
       >
         <Stack sx={ListDivStyle}>
@@ -94,19 +97,14 @@ const Section4 = () => {
           <CustomTooltip
             title={
               <Stack sx={{ width: '400px', height: 'auto' }}>
-                <img src="/images/talentProjectStart.png" alt="..." />
+                <Image src="/images/talentProjectStart.png" alt="talentProjectStart" width={400} height={280} style={{ width: '100%', height: 'auto' }} />
               </Stack>
             }
             arrow
             placement="bottom-start"
           >
             <Stack sx={IconDivStyle}>
-              <img
-                src="/icon/playIcon.png"
-                alt="..."
-                width="30px"
-                height="30px"
-              />
+              <Image src="/icon/playIcon.png" alt="play" width={30} height={30} />
             </Stack>
           </CustomTooltip>
         </Stack>
@@ -119,19 +117,14 @@ const Section4 = () => {
           <CustomTooltip
             title={
               <Stack sx={{ width: '400px', height: 'auto' }}>
-                <img src="/images/talentWorkspace.png" alt="..." />
+                <Image src="/images/talentWorkspace.png" alt="talentWorkspace" width={400} height={280} style={{ width: '100%', height: 'auto' }} />
               </Stack>
             }
             arrow
             placement="bottom-start"
           >
             <Stack sx={IconDivStyle}>
-              <img
-                src="/icon/desktopIcon.png"
-                alt="..."
-                width="30px"
-                height="30px"
-              />
+              <Image src="/icon/desktopIcon.png" alt="desktop" width={30} height={30} />
             </Stack>
           </CustomTooltip>
         </Stack>
@@ -141,19 +134,14 @@ const Section4 = () => {
           <CustomTooltip
             title={
               <Stack sx={{ width: '400px', height: 'auto' }}>
-                <img src="/images/talentJobClose.png" alt="..." />
+                <Image src="/images/talentJobClose.png" alt="talentJobClose" width={400} height={280} style={{ width: '100%', height: 'auto' }} />
               </Stack>
             }
             arrow
             placement="bottom-end"
           >
             <Stack sx={IconDivStyle}>
-              <img
-                src="/icon/stampIcon.png"
-                alt="..."
-                width="30px"
-                height="30px"
-              />
+              <Image src="/icon/stampIcon.png" alt="stamp" width={30} height={30} />
             </Stack>
           </CustomTooltip>
         </Stack>

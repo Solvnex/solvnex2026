@@ -1,6 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { Box, Typography, Stack } from '@mui/material';
+import Image from 'next/image';
 
 const StackStyle = {
   display: 'flex',
@@ -12,7 +12,7 @@ const StackStyle = {
 const StatStyle = {
   color: '#212020',
   fontWeight: '700',
-  fontSize: '60px',
+  fontSize: { xs: '36px', md: '60px' },
 };
 
 const StatName = {
@@ -54,25 +54,10 @@ const HomeSection2 = () => {
           marginBottom: { xs: '30px', md: '115px' },
         }}
       >
-        <img
-          src="/images/petronas.png"
-          alt="logopetronas"
-          width="128px"
-          height="49px"
-        />
-        <img
-          src="/images/tata-consultancy.png"
-          alt="logotata"
-          width="152px"
-          height="61px"
-        />
-        <img
-          src="/images/mdec.png"
-          alt="logomdec"
-          width="168px"
-          height="35px"
-        />
-        <img src="/images/aws.png" alt="logoaws" width="222px" height="43px" />
+        <Image src="/images/petronas.png" alt="logopetronas" width={128} height={49} />
+        <Image src="/images/tata-consultancy.png" alt="logotata" width={152} height={61} />
+        <Image src="/images/mdec.png" alt="logomdec" width={168} height={35} />
+        <Image src="/images/aws.png" alt="logoaws" width={222} height={43} />
       </Stack>
       <Stack
         sx={{

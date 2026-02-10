@@ -9,7 +9,7 @@ const Section7 = () => {
         justifyContent: 'center',
         alignItems: 'center',
         gap: '40px',
-        padding: '0 79px 69px 101px',
+        padding: { xs: '0 30px 69px', md: '0 79px 69px 101px' },
       }}
     >
       <Typography sx={{ fontWeight: 700, fontSize: '45px', color: '#212020' }}>

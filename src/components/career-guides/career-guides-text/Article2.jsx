@@ -7,7 +7,7 @@ import {
   TitleStyle,
 } from './CareerGuides.Styles';
 
-const Article2 = () => {
+const Article2 = ({ showTitle = true }) => {
   return (
     <Box
       sx={{
@@ -18,9 +18,11 @@ const Article2 = () => {
         gap: '30px',
       }}
     >
-      <Typography sx={TitleStyle}>
-        Understanding The Art Of Salary Negotiation
-      </Typography>
+      {showTitle && (
+        <Typography sx={TitleStyle}>
+          Understanding The Art Of Salary Negotiation
+        </Typography>
+      )}
       <Typography sx={DescStyle}>
         is essential for professionals who seek to maximize their earning
         potential and advance their careers. This comprehensive career guide

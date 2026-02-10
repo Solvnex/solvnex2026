@@ -1,4 +1,5 @@
 import { Box, Divider, Stack, Typography } from '@mui/material';
+import { responsive } from '@/components/shared/responsive';
 
 const SectionTitle = {
   fontSize: '16px',
@@ -29,10 +30,11 @@ const WhoWeAre = () => {
     <Box
       sx={{
         display: 'flex',
-        flexDirection: 'row',
+        flexDirection: responsive.rowToCol,
         justifyContent: 'flex-start',
         alignItems: 'start',
-        padding: '60px 81px  60px 103px',
+        padding: { xs: '30px', md: '60px 81px 60px 103px' },
+        gap: { xs: '24px', md: '0' },
       }}
     >
       <Stack
@@ -40,8 +42,8 @@ const WhoWeAre = () => {
           flexDirection: 'column',
           justifyContent: 'flex-start',
           alignItems: 'start',
-          marginRight: '146px',
-          width: '39.2%',
+          marginRight: { xs: 0, md: '146px' },
+          width: { xs: '100%', md: '39.2%' },
         }}
       >
         <Typography sx={SectionTitle}>Solvnex</Typography>
@@ -49,7 +51,7 @@ const WhoWeAre = () => {
         <Typography
           sx={{
             ...SectionSubtitle,
-            fontSize: '50px',
+            fontSize: { xs: '32px', md: '50px' },
           }}
         >
           Who we are
@@ -83,15 +85,15 @@ const WhoWeAre = () => {
           justifyContent: 'flex-start',
           alignItems: 'start',
           gap: '44px',
-          width: '47.5%',
+          width: { xs: '100%', md: '47.5%' },
         }}
       >
         <Stack
           sx={{
-            flexDirection: 'row',
+            flexDirection: responsive.rowToCol,
             justifyContent: 'flex-start',
             alignItems: 'self-start',
-            gap: '3%',
+            gap: { xs: '20px', md: '3%' },
           }}
         >
           <Stack sx={{ flexDirection: 'column' }}>
@@ -100,7 +102,7 @@ const WhoWeAre = () => {
             <Typography
               sx={{
                 ...SectionSubtitle,
-                fontSize: '25px',
+                fontSize: { xs: '22px', md: '25px' },
               }}
             >
               Be A Leading Player In The Gig Professional
@@ -117,7 +119,7 @@ const WhoWeAre = () => {
             <Typography
               sx={{
                 ...SectionSubtitle,
-                fontSize: '25px',
+                fontSize: { xs: '22px', md: '25px' },
               }}
             >
               To Close The Gap In Gig Economy
@@ -131,10 +133,10 @@ const WhoWeAre = () => {
         </Stack>
         <Stack
           sx={{
-            flexDirection: 'row',
+            flexDirection: responsive.rowToCol,
             justifyContent: 'flex-start',
             alignItems: 'self-start',
-            gap: '3%',
+            gap: { xs: '20px', md: '3%' },
           }}
         >
           <Stack sx={{ flexDirection: 'column' }}>
@@ -143,7 +145,7 @@ const WhoWeAre = () => {
             <Typography
               sx={{
                 ...SectionSubtitle,
-                fontSize: '25px',
+                fontSize: { xs: '22px', md: '25px' },
               }}
             >
               Corporations, SMEs, And Corporates
@@ -162,7 +164,7 @@ const WhoWeAre = () => {
             <Typography
               sx={{
                 ...SectionSubtitle,
-                fontSize: '25px',
+                fontSize: { xs: '22px', md: '25px' },
               }}
             >
               We Help You Tailored Your Rules And Regulations

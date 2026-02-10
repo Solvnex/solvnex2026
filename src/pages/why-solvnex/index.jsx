@@ -6,6 +6,7 @@ import Partners from '@/components/why-solvnex/Partners';
 import WhoWeAre from '@/components/why-solvnex/WhoWeAre';
 import { Box, Stack, Typography } from '@mui/material';
 import React from 'react';
+import { responsive } from '@/components/shared/responsive';
 
 const WhySolvnex = () => {
   return (
@@ -17,14 +18,14 @@ const WhySolvnex = () => {
             justifyContent: 'flex-start',
             alignItems: 'start',
             background: '#FCF8EA',
-            padding: '118px 216px 48px 52px',
+            padding: { xs: '40px 30px', md: '118px 216px 48px 52px' },
             gap: '20px',
           }}
         >
           <Typography
             sx={{
               fontWeight: 700,
-              fontSize: '50px',
+              fontSize: { xs: '32px', md: '50px' },
               color: '#212020',
             }}
           >
@@ -33,7 +34,7 @@ const WhySolvnex = () => {
           <Typography
             sx={{
               fontWeight: 500,
-              fontSize: '20px',
+              fontSize: { xs: '18px', md: '20px' },
               color: '#212020',
             }}
           >

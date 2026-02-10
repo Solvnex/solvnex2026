@@ -51,7 +51,8 @@ const IconDivStyle = {
 
 const ListConnector = {
   border: '2px dashed #C6C1B3',
-  width: '450px',
+  width: { xs: '0px', md: '450px' },
+  display: { xs: 'none', md: 'block' },
   marginTop: '60px',
 };
 
@@ -61,7 +62,7 @@ const Section4 = () => {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        padding: '23px 90px 476px 104px',
+        padding: { xs: '30px', md: '23px 90px 476px 104px' },
         background: '#000',
         justifyContent: 'flex-start',
         alignItems: 'center',
@@ -83,10 +84,11 @@ const Section4 = () => {
       <Stack
         sx={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'flex-start',
           alignItems: 'center',
           width: '100%',
+          gap: { xs: '20px', md: '0' },
         }}
       >
         <Stack sx={ListDivStyle}>

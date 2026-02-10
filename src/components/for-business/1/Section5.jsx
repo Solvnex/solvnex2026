@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import { Stack, Typography } from '@mui/material';
+import Image from 'next/image';
 import { useState } from 'react';
 
 const Section5 = () => {
@@ -9,7 +9,7 @@ const Section5 = () => {
     setActiveStep(step);
   };
   return (
-    <Stack sx={{ flexDirection: 'column', padding: '80px 110px 80px 181px' }}>
+    <Stack sx={{ flexDirection: 'column', padding: { xs: '30px', md: '80px 110px 80px 181px' } }}>
       <Typography
         sx={{
           fontWeight: 700,
@@ -22,38 +22,24 @@ const Section5 = () => {
       </Typography>
       <Stack
         sx={{
-          flexDirection: 'row',
+          flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'space-between',
           alignItems: 'start',
+          gap: { xs: '24px', md: '0' },
         }}
       >
-        <Stack sx={{ width: '60%' }}>
+        <Stack sx={{ width: { xs: '100%', md: '60%' } }}>
           {activeStep === 1 && (
-            <img
-              src="/images/loginSample.png"
-              alt="..."
-              width="347px"
-              height="501px"
-            />
+            <Image src="/images/loginSample.png" alt="login" width={347} height={501} style={{ width: '100%', height: 'auto' }} />
           )}
           {activeStep === 2 && (
-            <img
-              src="/images/profileSetup.png"
-              alt="..."
-              width="660px"
-              height="548px"
-            />
+            <Image src="/images/profileSetup.png" alt="profile" width={660} height={548} style={{ width: '100%', height: 'auto' }} />
           )}
           {activeStep === 3 && (
-            <img
-              src="/images/postJob.png"
-              alt="..."
-              width="690px"
-              height="448px"
-            />
+            <Image src="/images/postJob.png" alt="post" width={690} height={448} style={{ width: '100%', height: 'auto' }} />
           )}
         </Stack>
-        <Stack sx={{ flexDirection: 'column', width: '40%', gap: '24px' }}>
+        <Stack sx={{ flexDirection: 'column', width: { xs: '100%', md: '40%' }, gap: '24px' }}>
           {[1, 2, 3].map((step) => (
             <Stack
               key={step}

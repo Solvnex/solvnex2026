@@ -10,6 +10,7 @@ import {
   Breadcrumbs,
   Box,
 } from '@mui/material';
+import Image from 'next/image';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import ArrowBackIcon from '@mui/icons-material/ArrowBackOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
@@ -46,7 +47,7 @@ const ReadMore = ({ targetType }) => {
   };
 
   return (
-    <Box sx={{ padding: '60px 128px 60px', background: '#fcfcfc' }}>
+    <Box sx={{ padding: { xs: '30px', md: '60px 128px 60px' }, background: '#fcfcfc' }}>
       <Typography
         sx={{
           fontWeight: 600,
@@ -77,7 +78,7 @@ const ReadMore = ({ targetType }) => {
                   sx={{
                     justifyContent: 'center',
                     alignItems: 'center',
-                    height: '400px',
+                    height: { xs: '220px', md: '400px' },
                     borderRadius: '10px',
                     marginBottom: '30px',
                     backgroundImage: `url(${article.Image})`,
@@ -91,7 +92,7 @@ const ReadMore = ({ targetType }) => {
                   <Typography
                     sx={{
                       fontWeight: 600,
-                      fontSize: '16px',
+                      fontSize: { xs: '14px', md: '16px' },
                       color: '#fff',
                     }}
                   >
@@ -109,23 +110,23 @@ const ReadMore = ({ targetType }) => {
                   }}
                 >
                   <Typography
-                    sx={{ fontWeight: 500, fontSize: '14px', color: '#504c4c' }}
+                    sx={{ fontWeight: 500, fontSize: { xs: '12px', md: '14px' }, color: '#504c4c' }}
                   >
                     {article.Date}
                   </Typography>
                   <CircleIcon sx={CircleIconStyle} />
-                  <Typography sx={{ fontSize: '14px', color: '#504c4c' }}>
+                  <Typography sx={{ fontSize: { xs: '12px', md: '14px' }, color: '#504c4c' }}>
                     {article.Duration}
                   </Typography>
                 </Stack>
                 <Typography
                   sx={{
                     fontWeight: 600,
-                    fontSize: '20px',
+                    fontSize: { xs: '18px', md: '20px' },
                     color: '#212020',
                     marginBottom: '32px',
                     width: '100%',
-                    height: '50px',
+                    height: { xs: 'auto', md: '50px' },
                   }}
                 >
                   {article.Title.length > 65
@@ -140,7 +141,7 @@ const ReadMore = ({ targetType }) => {
                     alignItems: 'center',
                     gap: '10px',
                     fontWeight: 500,
-                    fontSize: '16px',
+                    fontSize: { xs: '14px', md: '16px' },
                     color: '#504c4c',
                   }}
                 >
@@ -160,12 +161,18 @@ const ReadMore = ({ targetType }) => {
                   textDecoration: 'none',
                 }}
               >
-                <img
-                  src={article.Image}
-                  alt={article.Title}
-                  height="400px"
-                  style={{ borderRadius: '10px', marginBottom: '30px' }}
-                />
+                <Box
+                  sx={{
+                    position: 'relative',
+                    width: '100%',
+                    height: { xs: '220px', md: '400px' },
+                    borderRadius: '10px',
+                    overflow: 'hidden',
+                    marginBottom: '30px',
+                  }}
+                >
+                  <Image src={article.Image} alt={article.Title} fill style={{ objectFit: 'cover' }} />
+                </Box>
                 <Stack
                   sx={{
                     flexDirection: 'row',
@@ -177,23 +184,23 @@ const ReadMore = ({ targetType }) => {
                   }}
                 >
                   <Typography
-                    sx={{ fontWeight: 500, fontSize: '14px', color: '#504c4c' }}
+                    sx={{ fontWeight: 500, fontSize: { xs: '12px', md: '14px' }, color: '#504c4c' }}
                   >
                     {article.Date}
                   </Typography>
                   <CircleIcon sx={CircleIconStyle} />
-                  <Typography sx={{ fontSize: '14px', color: '#504c4c' }}>
+                  <Typography sx={{ fontSize: { xs: '12px', md: '14px' }, color: '#504c4c' }}>
                     {article.Duration}
                   </Typography>
                 </Stack>
                 <Typography
                   sx={{
                     fontWeight: 600,
-                    fontSize: '20px',
+                    fontSize: { xs: '18px', md: '20px' },
                     color: '#212020',
                     marginBottom: '32px',
                     width: '100%',
-                    height: '50px',
+                    height: { xs: 'auto', md: '50px' },
                   }}
                 >
                   {article.Title.length > 65
@@ -208,7 +215,7 @@ const ReadMore = ({ targetType }) => {
                     alignItems: 'center',
                     gap: '10px',
                     fontWeight: 500,
-                    fontSize: '16px',
+                    fontSize: { xs: '14px', md: '16px' },
                     color: '#504c4c',
                   }}
                 >

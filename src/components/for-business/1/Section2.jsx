@@ -1,5 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
 import { Stack, Typography, styled } from '@mui/material';
+import Image from 'next/image';
 
 const TitleStyle = { fontWeight: 600, fontSize: '28px', color: '#1F1D1D' };
 
@@ -44,12 +44,12 @@ const Section2 = () => {
           gap: { xs: '30px', md: '82px' },
         }}
       >
-        <Stack sx={{ flexDirection: 'column', width: '30%' }}>
-          <img
+        <Stack sx={{ flexDirection: 'column', width: { xs: '100%', md: '30%' } }}>
+          <Image
             src="/icon/routeIcon.png"
-            alt="..."
-            width="46px"
-            height="46px"
+            alt="route"
+            width={46}
+            height={46}
             style={{ marginBottom: '16px' }}
           />
           <Typography sx={TitleStyle}>
@@ -66,12 +66,12 @@ const Section2 = () => {
             </CustomLi>
           </CustomUl>
         </Stack>
-        <Stack sx={{ flexDirection: 'column', width: '30%' }}>
-          <img
+        <Stack sx={{ flexDirection: 'column', width: { xs: '100%', md: '30%' } }}>
+          <Image
             src="/icon/chatIcon.png"
-            alt="..."
-            width="46px"
-            height="46px"
+            alt="chat"
+            width={46}
+            height={46}
             style={{ marginBottom: '16px' }}
           />
           <Typography sx={TitleStyle}>
@@ -88,12 +88,12 @@ const Section2 = () => {
             </CustomLi>
           </CustomUl>
         </Stack>
-        <Stack sx={{ flexDirection: 'column', width: '30%' }}>
-          <img
+        <Stack sx={{ flexDirection: 'column', width: { xs: '100%', md: '30%' } }}>
+          <Image
             src="/icon/chartIcon.png"
-            alt="..."
-            width="46px"
-            height="46px"
+            alt="chart"
+            width={46}
+            height={46}
             style={{ marginBottom: '16px' }}
           />
           <Typography sx={TitleStyle}>

@@ -7,7 +7,7 @@ import {
   TitleStyle,
 } from './CareerGuides.Styles';
 
-const Article1 = () => {
+const Article1 = ({ showTitle = true }) => {
   return (
     <Box
       sx={{
@@ -18,9 +18,11 @@ const Article1 = () => {
         gap: '30px',
       }}
     >
-      <Typography sx={TitleStyle}>
-        The Power of Mentorship in Career Development
-      </Typography>
+      {showTitle && (
+        <Typography sx={TitleStyle}>
+          The Power of Mentorship in Career Development
+        </Typography>
+      )}
       <Typography sx={DescStyle}>
         In the journey of career development, there is a force that often goes
         underestimated but has the potential to shape one&apos;s path

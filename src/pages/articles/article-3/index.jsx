@@ -13,6 +13,7 @@ import { useRouter } from "next/router";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import NextIcon from "@mui/icons-material/NavigateNext";
 import Article3 from "@/components/articles/Article3";
+import { responsive } from "@/components/shared/responsive";
 
 const ArticleA = () => {
   const router = useRouter();
@@ -51,7 +52,7 @@ const ArticleA = () => {
 
   return (
     <MainLayout>
-      <Box sx={{ margin: "30px 109px 100px 72px" }}>
+      <Box sx={{ padding: { xs: "30px", md: "30px 109px 100px 72px" } }}>
         <Stack
           sx={{
             display: "flex",
@@ -78,7 +79,7 @@ const ArticleA = () => {
             flexDirection: "column",
             justifyContent: "flex-start",
             alignItems: "start",
-            marginLeft: "28px",
+            marginLeft: { xs: 0, md: "28px" },
           }}
         >
           <Article3 />

@@ -10,7 +10,7 @@ import {
   Typography,
 } from "@mui/material";
 import { useRouter } from "next/router";
-import React from "react";
+import { responsive } from "@/components/shared/responsive";
 import ArrowBackIcon from "@mui/icons-material/ArrowBackOutlined";
 import NextIcon from "@mui/icons-material/NavigateNext";
 import CircleIcon from "@mui/icons-material/Circle";
@@ -22,10 +22,10 @@ const ButtonStyle = {
   height: "auto",
   flexDirection: "row",
   justifyContent: "space-between",
-  gap: "50px",
+  gap: { xs: "16px", md: "50px" },
   alignItems: "start",
   borderRadius: "10px",
-  padding: "20px",
+  padding: { xs: "16px", md: "20px" },
   background: "#EDEDED",
   boxShadow: "0px 3px 6px #00000029",
 };
@@ -39,21 +39,21 @@ const CircleIconStyle = {
 
 const DateStyle = {
   fontWeight: 500,
-  fontSize: "14px",
+  fontSize: { xs: "12px", md: "14px" },
   color: "#504C4C",
-  textWrap: "nowrap",
+  whiteSpace: "nowrap",
 };
 
 const TitleStyle = {
   fontWeight: 700,
-  fontSize: "25px",
+  fontSize: { xs: "22px", md: "25px" },
   color: "#01B1A8",
-  marginBottom: "45px",
+  marginBottom: { xs: "24px", md: "45px" },
   textAlign: "left",
 };
 
 const TextStyle = {
-  fontSize: "16px",
+  fontSize: { xs: "14px", md: "16px" },
   textAlign: "left",
   color: "#504C4C",
   marginBottom: "20px",
@@ -63,7 +63,7 @@ const ArticleBadge = {
   borderRadius: "5px",
   minWidth: "max-content",
   padding: "5px 10px",
-  fontSize: "14px",
+  fontSize: { xs: "12px", md: "14px" },
   fontWeight: 400,
 };
 
@@ -73,9 +73,9 @@ const ReadMoreStyle = {
   justifyContent: "flex-start",
   alignItems: "center",
   fontWeight: 500,
-  fontSize: "16px",
+  fontSize: { xs: "14px", md: "16px" },
   color: "#01B1A8",
-  textWrap: "nowrap",
+  whiteSpace: "nowrap",
   gap: "10px",
 };
 
@@ -111,7 +111,7 @@ const Article = () => {
           flexDirection: "column",
           justifyContent: "flex-start",
           alignItems: "start",
-          padding: "30px 150px 100px 72px",
+          padding: { xs: "30px", md: "30px 150px 100px 72px" },
           background: "#fcfcfc",
         }}
       >
@@ -137,27 +137,29 @@ const Article = () => {
             justifyContent: "flex-start",
             alignItems: "start",
             gap: "21px",
-            margin: "0 0 60px 55px",
+            marginBottom: "60px",
+            marginLeft: { xs: 0, md: "55px" },
           }}
         >
           <Typography
-            sx={{ fontWeight: 700, fontSize: "80px", color: "#212020" }}
+            sx={{ fontWeight: 700, fontSize: responsive.titleXL, color: "#212020" }}
           >
             Everything you need to know
           </Typography>
-          <Typography sx={{ fontSize: "20px", color: "#212020" }}>
+          <Typography sx={{ fontSize: { xs: "18px", md: "20px" }, color: "#212020" }}>
             Articles
           </Typography>
-          <Stack
-            sx={{
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              alignItems: "start",
-              gap: "60px",
-              margin: "0 0 80px 23px",
-              width: "100%",
-            }}
-          >
+            <Stack
+              sx={{
+                flexDirection: "column",
+                justifyContent: "flex-start",
+                alignItems: "start",
+                gap: "60px",
+                marginBottom: "80px",
+                marginLeft: { xs: 0, md: "23px" },
+                width: "100%",
+              }}
+            >
             <Stack
               sx={{
                 display: "flex",
@@ -182,7 +184,7 @@ const Article = () => {
                 }}
               >
                 <Typography sx={{ fontSize: "16px", color: "#212020" }}>
-                  Showing 1-6 of 12 results
+                  Showing 1-3 of 3 results
                 </Typography>
               </Stack>
             </Stack>

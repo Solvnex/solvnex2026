@@ -7,7 +7,7 @@ const Section3 = () => {
       sx={{
         justifyContent: 'center',
         alignItems: 'start',
-        padding: '0 69px 0 76px',
+        padding: { xs: '0 30px', md: '0 69px 0 76px' },
       }}
     >
       <BusinessHiringProcess />

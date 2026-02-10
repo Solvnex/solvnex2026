@@ -7,7 +7,7 @@ import {
   TitleStyle,
 } from './CareerGuides.Styles';
 
-const Article3 = () => {
+const Article3 = ({ showTitle = true }) => {
   return (
     <Box
       sx={{
@@ -18,9 +18,11 @@ const Article3 = () => {
         gap: '30px',
       }}
     >
-      <Typography sx={TitleStyle}>
-        Tailoring Resumes for Different Job Roles
-      </Typography>
+      {showTitle && (
+        <Typography sx={TitleStyle}>
+          Tailoring Resumes for Different Job Roles
+        </Typography>
+      )}
       <Typography sx={DescStyle}>
         A well-crafted resume is your ticket to the job interview. However, one
         size does not fit all when it comes to resumes. To maximize your chances

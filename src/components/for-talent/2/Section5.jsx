@@ -9,10 +9,10 @@ const Section5 = () => {
         justifyContent: 'center',
         alignItems: 'center',
         gap: '40px',
-        padding: '0 79px 69px 101px',
+        padding: { xs: '0 30px 40px', md: '0 79px 69px 101px' },
       }}
     >
-      <Typography sx={{ fontWeight: 700, fontSize: '45px', color: '#212020' }}>
+      <Typography sx={{ fontWeight: 700, fontSize: { xs: '32px', md: '45px' }, color: '#212020' }}>
         What people say about Solvnex
       </Typography>
       <TestimonyCard />
