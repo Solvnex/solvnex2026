@@ -1,5 +1,6 @@
-/* eslint-disable @next/next/no-img-element */
 import { Box, Stack, Typography } from '@mui/material';
+import Image from 'next/image';
+import { responsive } from '@/components/shared/responsive';
 
 const Investor = () => {
   return (
@@ -9,7 +10,7 @@ const Investor = () => {
         flexDirection: 'column',
         justifyContent: 'flex-start',
         alignItems: 'start',
-        padding: '0px 101px 60px 103px',
+        padding: { xs: '0 30px 40px', md: '0px 101px 60px 103px' },
       }}
     >
       <Typography
@@ -22,7 +23,7 @@ const Investor = () => {
           paddingBottom: '18.5px',
           marginBottom: '14.5px',
           borderBottom: '1px solid #01b1a8',
-          width: '40%',
+          width: { xs: '100%', md: '40%' },
         }}
       >
         Investor
@@ -30,25 +31,25 @@ const Investor = () => {
       <Stack
         sx={{
           display: 'flex',
-          flexDirection: 'row',
+          flexDirection: responsive.rowToCol,
           justifyContent: 'space-between',
           alignItems: 'start',
-          gap: '12%',
+          gap: { xs: '24px', md: '12%' },
         }}
       >
         <Typography
           sx={{
             fontWeight: '700',
-            fontSize: '50px',
+            fontSize: { xs: '32px', md: '50px' },
             textAlign: 'left',
             lineHeight: '60px',
             color: '#212020',
-            width: '40%',
+            width: { xs: '100%', md: '40%' },
           }}
         >
           We are committed to transparency
         </Typography>
-        <Stack sx={{ flexDirection: 'column', gap: '37px', width: '48%' }}>
+        <Stack sx={{ flexDirection: 'column', gap: '37px', width: { xs: '100%', md: '48%' } }}>
           <Typography
             sx={{
               fontSize: '18px',
@@ -62,12 +63,7 @@ const Investor = () => {
             Consultancy Services (TCS). e-ROTA is a product of collaborative
             effort between SOLVNEX and industry leaders.
           </Typography>
-          <img
-            src="/images/SeedLab.png"
-            alt="seedlabimage"
-            width="325px"
-            height="87px"
-          />
+          <Image src="/images/SeedLab.png" alt="seedlabimage" width={325} height={87} style={{ width: '100%', height: 'auto' }} />
         </Stack>
       </Stack>
     </Box>

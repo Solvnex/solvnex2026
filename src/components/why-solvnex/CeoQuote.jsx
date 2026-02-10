@@ -1,4 +1,5 @@
 import { Box, Divider, Stack, Typography } from '@mui/material';
+import { responsive } from '@/components/shared/responsive';
 
 const textStyle = {
   fontWeight: '300',
@@ -15,7 +16,7 @@ const CeoQuote = () => {
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        padding: '60px 101px',
+        padding: { xs: '30px', md: '60px 101px' },
       }}
     >
       <Stack
@@ -24,7 +25,7 @@ const CeoQuote = () => {
           flexDirection: 'column',
           justifyContent: 'flex-start',
           alignItems: 'start',
-          padding: '46px 50px',
+          padding: { xs: '24px', md: '46px 50px' },
           background: '#01b1a8',
           borderRadius: '10px',
         }}
@@ -32,7 +33,7 @@ const CeoQuote = () => {
         <Typography
           sx={{
             fontWeight: '700',
-            fontSize: '40px',
+            fontSize: { xs: '28px', md: '40px' },
             textAlign: 'left',
             lineHeight: '50px',
             color: 'white',
@@ -46,9 +47,10 @@ const CeoQuote = () => {
         <Stack
           sx={{
             display: 'flex',
-            flexDirection: 'row',
+            flexDirection: responsive.rowToCol,
             justifyContent: 'space-between',
-            alignItems: 'center',
+            alignItems: 'start',
+            gap: { xs: '16px', md: 0 },
             width: '100%',
           }}
         >
@@ -56,7 +58,7 @@ const CeoQuote = () => {
             sx={{
               border: '1px solid white',
               marginRight: '27.5px',
-              width: '65.51%',
+              width: { xs: '100%', md: '65.51%' },
             }}
           />
           <Stack
