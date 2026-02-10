@@ -7,7 +7,7 @@ import {
   TitleStyle,
 } from './CareerGuides.Styles';
 
-const Article4 = () => {
+const Article4 = ({ showTitle = true }) => {
   return (
     <Box
       sx={{
@@ -18,9 +18,11 @@ const Article4 = () => {
         gap: '30px',
       }}
     >
-      <Typography sx={TitleStyle}>
-        Remote Work and Career Development: Strategies for Success
-      </Typography>
+      {showTitle && (
+        <Typography sx={TitleStyle}>
+          Remote Work and Career Development: Strategies for Success
+        </Typography>
+      )}
       <Typography sx={DescStyle}>
         Remote work, once considered a perk, has become a fundamental aspect of
         the modern workforce. As the lines between work and life blur, it&apos;s

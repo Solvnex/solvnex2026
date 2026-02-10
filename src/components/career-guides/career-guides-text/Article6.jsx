@@ -7,7 +7,7 @@ import {
   TitleStyle,
 } from './CareerGuides.Styles';
 
-const Article6 = () => {
+const Article6 = ({ showTitle = true }) => {
   return (
     <Box
       sx={{
@@ -18,9 +18,11 @@ const Article6 = () => {
         gap: '30px',
       }}
     >
-      <Typography sx={TitleStyle}>
-        Salary Expectations and Setting Realistic Career Goals
-      </Typography>
+      {showTitle && (
+        <Typography sx={TitleStyle}>
+          Salary Expectations and Setting Realistic Career Goals
+        </Typography>
+      )}
       <Typography sx={DescStyle}>
         Determining your salary expectations and setting realistic career goals
         are pivotal steps in your professional journey. These decisions can

@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Box, IconButton, Link, Stack, Typography } from '@mui/material';
 import React from 'react';
+import Image from 'next/image';
 import ArrowBackIcon from '@mui/icons-material/ArrowBackOutlined';
 import CircleIcon from '@mui/icons-material/Circle';
 import { useRouter } from 'next/router';
@@ -24,11 +25,11 @@ const ArticleViewHeader = ({ article }) => {
     >
       <Stack
         sx={{
-          flexDirection: 'row',
+          flexDirection: { xs: 'column', md: 'row' },
           justifyContent: 'flex-start',
-          alignItems: 'end',
-          gap: '25px',
-          marginRight: '116px',
+          alignItems: { xs: 'start', md: 'end' },
+          gap: { xs: '20px', md: '25px' },
+          marginRight: { xs: 0, md: '116px' },
           width: '100%',
         }}
       >
@@ -37,15 +38,17 @@ const ArticleViewHeader = ({ article }) => {
             flexDirection: 'column',
             justifyContent: 'flex-start',
             alignItems: 'start',
-            width: '50%',
-            height: '812px',
+            width: { xs: '100%', md: '50%' },
+            minHeight: { xs: '360px', md: '812px' },
+            height: { xs: 'auto', md: '812px' },
             backgroundImage: `url(${article.Image})`,
             backgroundBlendMode: 'multiply',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundRepeat: 'no-repeat',
-            padding: '30px 30px 171px 72px',
+            padding: { xs: '20px', md: '30px 30px 171px 72px' },
             backgroundColor: '#00000099',
+            overflow: 'hidden',
           }}
         >
           <IconButton
@@ -71,7 +74,7 @@ const ArticleViewHeader = ({ article }) => {
               justifyContent: 'space-between',
               alignItems: 'start',
               width: '100%',
-              marginLeft: '56px',
+              marginLeft: { xs: 0, md: '56px' },
             }}
           >
             <Stack
@@ -92,27 +95,30 @@ const ArticleViewHeader = ({ article }) => {
             <Typography
               sx={{
                 fontWeight: 600,
-                fontSize: '50px',
+                fontSize: { xs: '32px', md: '50px' },
                 color: '#fff',
-                width: '95%',
+                width: '100%',
               }}
             >
               {article.Title}
             </Typography>
             <Stack
               sx={{
-                marginTop: '100px',
-                flexDirection: 'row',
+                marginTop: { xs: '30px', md: '100px' },
+                flexDirection: { xs: 'column', md: 'row' },
                 justifyContent: 'flex-start',
                 alignItems: 'start',
+                gap: { xs: '12px', md: 0 },
+                width: '100%',
+                flexWrap: { xs: 'wrap', md: 'nowrap' },
               }}
             >
               <CircleIcon
                 sx={{
-                  width: '50px',
-                  height: '50px',
+                  width: { xs: '24px', md: '50px' },
+                  height: { xs: '24px', md: '50px' },
                   color: '#01b1a8',
-                  marginRight: '13px',
+                  marginRight: { xs: 0, md: '13px' },
                 }}
               />
               <Stack
@@ -121,16 +127,16 @@ const ArticleViewHeader = ({ article }) => {
                   justifyContent: 'flex-start',
                   alignItems: 'start',
                   gap: '8px',
-                  marginRight: '15px',
+                  marginRight: { xs: 0, md: '15px' },
                 }}
               >
                 <Typography
-                  sx={{ fontWeight: 300, fontSize: '16px', color: '#fff' }}
+                  sx={{ fontWeight: 300, fontSize: { xs: '14px', md: '16px' }, color: '#fff' }}
                 >
                   Posted by
                 </Typography>
                 <Typography
-                  sx={{ fontWeight: 500, fontSize: '16px', color: '#fff' }}
+                  sx={{ fontWeight: 500, fontSize: { xs: '14px', md: '16px' }, color: '#fff' }}
                 >
                   Solvnex Team
                 </Typography>
@@ -141,17 +147,17 @@ const ArticleViewHeader = ({ article }) => {
                   justifyContent: 'flex-start',
                   alignItems: 'start',
                   gap: '8px',
-                  marginRight: '19px',
-                  width: '106px',
+                  marginRight: { xs: 0, md: '19px' },
+                  width: { xs: 'auto', md: '106px' },
                 }}
               >
                 <Typography
-                  sx={{ fontWeight: 300, fontSize: '16px', color: '#fff' }}
+                  sx={{ fontWeight: 300, fontSize: { xs: '14px', md: '16px' }, color: '#fff' }}
                 >
                   Published
                 </Typography>
                 <Typography
-                  sx={{ fontWeight: 500, fontSize: '16px', color: '#fff' }}
+                  sx={{ fontWeight: 500, fontSize: { xs: '14px', md: '16px' }, color: '#fff' }}
                 >
                   {article.Date}
                 </Typography>
@@ -162,57 +168,42 @@ const ArticleViewHeader = ({ article }) => {
                   justifyContent: 'flex-start',
                   alignItems: 'start',
                   gap: '8px',
-                  marginRight: '110px',
-                  width: '106px',
+                  marginRight: { xs: 0, md: '32px' },
+                  width: { xs: 'auto', md: '106px' },
                 }}
               >
                 <Typography
-                  sx={{ fontWeight: 300, fontSize: '16px', color: '#fff' }}
+                  sx={{ fontWeight: 300, fontSize: { xs: '14px', md: '16px' }, color: '#fff' }}
                 >
                   2 Comments
                 </Typography>
                 <Typography
-                  sx={{ fontWeight: 500, fontSize: '16px', color: '#fff' }}
+                  sx={{ fontWeight: 500, fontSize: { xs: '14px', md: '16px' }, color: '#fff' }}
                 >
                   Join The Conversation
                 </Typography>
               </Stack>
               <Stack
                 sx={{
-                  flexDirection: 'column',
+                  flexDirection: { xs: 'row', md: 'column' },
                   justifyContent: 'center',
                   alignItems: 'center',
-                  gap: '10px',
-                  width: '40px',
+                  gap: { xs: '12px', md: '10px' },
+                  width: { xs: 'auto', md: '40px' },
                   height: 'auto',
                   background: '#FFFFFF 0% 0% no-repeat padding-box',
                   borderRadius: '5px',
                   padding: '10px',
                 }}
               >
-                <Link href="">
-                  <img
-                    src="/images/instagram.png"
-                    alt="..."
-                    width="20px"
-                    height="20px"
-                  />
+                <Link href="#" aria-label="Share on Instagram">
+                  <Image src="/images/instagram.png" alt="Instagram" width={20} height={20} />
                 </Link>
-                <Link href="">
-                  <img
-                    src="/images/linkedIn.png"
-                    alt="..."
-                    width="20px"
-                    height="20px"
-                  />
+                <Link href="#" aria-label="Share on LinkedIn">
+                  <Image src="/images/linkedIn.png" alt="LinkedIn" width={20} height={20} />
                 </Link>
-                <Link href="">
-                  <img
-                    src="/images/fb.png"
-                    alt="..."
-                    width="20px"
-                    height="20px"
-                  />
+                <Link href="#" aria-label="Share on Facebook">
+                  <Image src="/images/fb.png" alt="Facebook" width={20} height={20} />
                 </Link>
               </Stack>
             </Stack>
@@ -220,17 +211,19 @@ const ArticleViewHeader = ({ article }) => {
         </Stack>
         <Stack
           sx={{
-            paddingTop: '97px',
-            width: '42%',
-            height: '812px',
-            overflowY: 'scroll',
+            paddingTop: { xs: '0', md: '97px' },
+            width: { xs: '100%', md: '42%' },
+            height: { xs: 'auto', md: '812px' },
+            overflowY: { xs: 'visible', md: 'scroll' },
             '&::-webkit-scrollbar': {
               width: 0,
             },
             scrollbarWidth: 'none',
           }}
         >
-          {article.Desc}
+          {React.isValidElement(article.Desc)
+            ? React.cloneElement(article.Desc, { showTitle: false })
+            : article.Desc}
         </Stack>
       </Stack>
     </Box>

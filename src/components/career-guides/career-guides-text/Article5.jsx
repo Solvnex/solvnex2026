@@ -7,7 +7,7 @@ import {
   TitleStyle,
 } from './CareerGuides.Styles';
 
-const Article5 = () => {
+const Article5 = ({ showTitle = true }) => {
   return (
     <Box
       sx={{
@@ -18,9 +18,11 @@ const Article5 = () => {
         gap: '30px',
       }}
     >
-      <Typography sx={TitleStyle}>
-        Post-Interview Etiquette: Navigating the Next Steps with Professionalism
-      </Typography>
+      {showTitle && (
+        <Typography sx={TitleStyle}>
+          Post-Interview Etiquette: Navigating the Next Steps with Professionalism
+        </Typography>
+      )}
       <Typography sx={DescStyle}>
         The job interview is a critical juncture in your career journey, but
         your actions and communications after the interview are equally

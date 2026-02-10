@@ -12,6 +12,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import NextIcon from '@mui/icons-material/NavigateNext';
 import { useRouter } from 'next/router';
 import ArticleDivisions from '@/components/career-guides/ArticleDivisions';
+import { responsive } from '@/components/shared/responsive';
 
 const ResumeAndCoverLetter = () => {
   const router = useRouter();
@@ -45,7 +46,7 @@ const ResumeAndCoverLetter = () => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          padding: '30px 128px 103px 72px',
+          padding: { xs: '30px', md: '30px 128px 103px 72px' },
         }}
       >
         <IconButton
@@ -69,13 +70,13 @@ const ResumeAndCoverLetter = () => {
             flexDirection: 'column',
             justifyContent: 'flex-start',
             alignItems: 'start',
-            marginLeft: '55px',
+            marginLeft: { xs: 0, md: '55px' },
           }}
         >
           <Typography
             sx={{
               fontWeight: 700,
-              fontSize: '80px',
+              fontSize: responsive.titleXL,
               color: '#212020',
               marginBottom: '20px',
             }}
@@ -84,10 +85,10 @@ const ResumeAndCoverLetter = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: '20px',
+              fontSize: { xs: '18px', md: '20px' },
               color: '#212020',
               marginBottom: '40px',
-              width: '90%',
+              width: { xs: '100%', md: '90%' },
             }}
           >
             This exploration helps you gain insights into average salary ranges,
@@ -95,7 +96,7 @@ const ResumeAndCoverLetter = () => {
             career advancement.
           </Typography>
           <Breadcrumbs
-            sx={{ marginLeft: '23px', marginBottom: '40px' }}
+            sx={{ marginLeft: { xs: 0, md: '23px' }, marginBottom: '40px' }}
             separator={<NextIcon />}
           >
             {breadcrumbs}

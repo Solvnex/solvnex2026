@@ -8,6 +8,7 @@ import {
   PaginationItem,
   Box,
 } from '@mui/material';
+import { responsive } from '@/components/shared/responsive';
 import Image from 'next/image';
 import CircleIcon from '@mui/icons-material/Circle';
 import { CareerGuidesData } from '@/app/data/careerGuidesData';
@@ -89,26 +90,28 @@ const ArticleDivisions = ({ targetType }) => {
                     gap: '10px',
                     width: '100%',
                     marginBottom: '20px',
+                    px: responsive.cardPadX,
                   }}
                 >
                   <Typography
-                    sx={{ fontWeight: 500, fontSize: '14px', color: '#504c4c' }}
+                    sx={{ fontWeight: 500, fontSize: { xs: '12px', md: '14px' }, color: '#504c4c' }}
                   >
                     {article.Date}
                   </Typography>
                   <CircleIcon sx={CircleIconStyle} />
-                  <Typography sx={{ fontSize: '14px', color: '#504c4c' }}>
+                  <Typography sx={{ fontSize: { xs: '12px', md: '14px' }, color: '#504c4c' }}>
                     {article.Duration}
                   </Typography>
                 </Stack>
                 <Typography
                   sx={{
                     fontWeight: 600,
-                    fontSize: '20px',
+                    fontSize: { xs: '18px', md: '20px' },
                     color: '#212020',
                     marginBottom: '32px',
                     width: '100%',
-                    height: '50px',
+                    height: { xs: 'auto', md: '50px' },
+                    px: responsive.cardPadX,
                   }}
                 >
                   {article.Title.length > 65
@@ -123,8 +126,9 @@ const ArticleDivisions = ({ targetType }) => {
                     alignItems: 'center',
                     gap: '10px',
                     fontWeight: 500,
-                    fontSize: '16px',
+                    fontSize: { xs: '14px', md: '16px' },
                     color: '#504c4c',
+                    px: responsive.cardPadX,
                   }}
                 >
                   Read More
@@ -168,6 +172,7 @@ const ArticleDivisions = ({ targetType }) => {
                     gap: '10px',
                     width: '100%',
                     marginBottom: '20px',
+                    px: responsive.cardPadX,
                   }}
                 >
                   <Typography
@@ -188,6 +193,7 @@ const ArticleDivisions = ({ targetType }) => {
                     marginBottom: '32px',
                     width: '100%',
                     height: { xs: 'auto', md: '50px' },
+                    px: responsive.cardPadX,
                   }}
                 >
                   {article.Title.length > 65
@@ -204,6 +210,7 @@ const ArticleDivisions = ({ targetType }) => {
                     fontWeight: 500,
                     fontSize: { xs: '14px', md: '16px' },
                     color: '#504c4c',
+                    px: responsive.cardPadX,
                   }}
                 >
                   Read More

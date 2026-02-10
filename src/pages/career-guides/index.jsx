@@ -5,6 +5,7 @@ import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import { useRouter } from 'next/router';
 import NavigationButton from '@/components/career-guides/NavigationButton';
 import ArticleList from '@/components/career-guides/ArticleList';
+import { responsive } from '@/components/shared/responsive';
 
 const CareerGuides = () => {
   const router = useRouter();
@@ -18,7 +19,7 @@ const CareerGuides = () => {
         sx={{
           display: 'flex',
           flexDirection: 'column',
-          padding: '30px 127px 100px 72px',
+          padding: { xs: '30px', md: '30px 127px 100px 72px' },
           background: '#fcfcfc',
         }}
       >
@@ -43,13 +44,13 @@ const CareerGuides = () => {
             flexDirection: 'column',
             justifyContent: 'flex-start',
             alignItems: 'start',
-            marginLeft: '55px',
+            marginLeft: { xs: 0, md: '55px' },
           }}
         >
           <Typography
             sx={{
               fontWeight: 700,
-              fontSize: '80px',
+              fontSize: responsive.titleXL,
               color: '#212020',
               marginBottom: '20px',
             }}
@@ -58,10 +59,10 @@ const CareerGuides = () => {
           </Typography>
           <Typography
             sx={{
-              fontSize: '20px',
+              fontSize: { xs: '18px', md: '20px' },
               color: '#212020',
               marginBottom: '40px',
-              width: '68%',
+              width: { xs: '100%', md: '68%' },
             }}
           >
             Let us help you define a career path, write a resume & cover letter,
@@ -71,7 +72,7 @@ const CareerGuides = () => {
           <Typography
             sx={{
               fontWeight: 700,
-              fontSize: '40px',
+              fontSize: responsive.titleLg,
               color: '#212020',
               marginBottom: '0px',
             }}
